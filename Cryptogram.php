@@ -14,16 +14,35 @@
         <h2>Cryptogram</h2>
         <div class ="row">
             <div class ="span6">
-                <form class="well">
+                <form class="well" action="<?php echo("$_SERVER[PHP_SELF]")?>" method="post">
                     <fieldset>
                         <label>Type a word to find its coincidences.</label>
-                        <input type="text" placeholder="Type any kind of word...." />
+                        <textarea maxlength="100" name="WORD" placeholder="Type any kind of word...." rows="4"></textarea>
+                        <input type="submit" class="btn" />
                     </fieldset>
                 </form>
-            </div>           
+            </div>                       
             <div class ="span6">
                   <a href='Index.php' class='btn btn-primary'>Return to Index</a>
             </div>                       
+        </div>
+        <div class="row">
+            <div class="span6">
+                <?php
+                    if (isset($_POST["WORD"])) {
+                        $word = $_POST["WORD"];                        
+                        echo("<div class='well'");
+                        echo("<p><strong>Cryptogram text:</strong><br />");
+                        echo($word."</p>");
+                        echo("<p><strong>Number of characters:</strong><br />");
+                        echo(strlen($word."</p>"));
+                        echo("</div>");
+                    }
+            ?>
+            </div>
+            <div class="span6">
+                
+            </div>
         </div>
     </body>
 </html>
