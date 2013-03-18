@@ -17,7 +17,7 @@
                 <form class="well" action="<?php echo("$_SERVER[PHP_SELF]")?>" method="post">
                     <fieldset>
                         <label>Type your RFC to be validated</label>
-                        <input type="text" id ="RFC" name="RFC" max="13" placeholder="RFC goes here...." />
+                        <input type="text" name="RFC" max="13" placeholder="RFC goes here...." />
                         <input type="submit" class="btn" />
                     </fieldset>
                 </form>
@@ -25,7 +25,7 @@
                     <?php
                     if (isset($_POST["RFC"])) {
                         $rfc = $_POST["RFC"];
-                        $isValid = preg_match("/^[A-Za-z]{3,4}[0-9]{6}[A-Za-z0-9]{3}$/", $rfc);
+                        $isValid=  validateRFC($rfc);
                         if ($isValid)
                         {
                             echo("<p>Your RFC {$rfc} is valid</p>");
