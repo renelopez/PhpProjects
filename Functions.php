@@ -28,4 +28,10 @@ function printConversionCtoF() {
         $isValid = preg_match("/^[A-Za-z]{3,4}[0-9]{6}[A-Za-z0-9]{3}$/", $rfc);
         return $isValid;
     }
+    
+    function cleanChars($rfc)
+    {
+       $newRFC=  preg_replace("/[^a-zA-Z0-9]+/", "", $rfc);
+       return $newRFC;
+    }
 ?>

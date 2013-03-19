@@ -29,19 +29,37 @@
         <div class="row">
             <div class="span6">
                 <?php
-                    if (isset($_POST["WORD"])) {
-                        $word = $_POST["WORD"];                        
+                    if (isset($_POST["WORD"]))
+                    {
+                        $word = $_POST["WORD"];
+                        $newWord=cleanChars($word);
                         echo("<div class='well'");
                         echo("<p><strong>Cryptogram text:</strong><br />");
                         echo($word."</p>");
                         echo("<p><strong>Number of characters:</strong><br />");
-                        echo(strlen($word."</p>"));
-                        echo("</div>");
+                        echo(strlen($newWord)."</p>");     
+                        echo("</div>");                                               
                     }
             ?>
             </div>
-            <div class="span6">
-                
+            <div class="span6">                
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <table class='table table-bordered table-hover'>
+                    <tbody>
+                        <tr>
+                            <?php
+                                $wordUpper= strtoupper($newWord);
+                                foreach(range('a', 'z')as $i)
+                                {
+                                    
+                                }
+                            ?>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>
