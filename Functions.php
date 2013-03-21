@@ -31,7 +31,8 @@ function printConversionCtoF() {
     
     function cleanChars($rfc)
     {
-       $newRFC=  preg_replace("/[^a-zA-Z0-9]+/", "", $rfc);
+       $noSpace = preg_replace('!\s+!', ' ', $rfc);
+       $newRFC=  preg_replace("/[^a-zA-Z0-9\s]+/", "", $noSpace);
        return $newRFC;
     }
 ?>
