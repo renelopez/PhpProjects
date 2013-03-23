@@ -34,15 +34,13 @@
 
                 if (isset($_POST["message"])) {
                     $str = $_POST["message"];
-                    
-                    $count=countLetters($str,'e');
+
+                    $count = countLetters($str, 'e');
 
                     echo "<p>Your original message:</p>";
                     echo "<p><i>$str</i></p>";
-                    
+
                     echo("The word 'e' was included $count times in your word");
-                    
-                    
                 }
                 ?>
             </div>
@@ -51,6 +49,6 @@
             </div>
         </div>
 
-</body>
+    </body>
 </html>
 

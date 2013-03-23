@@ -18,15 +18,15 @@
                 $domain = "orbit.mds.rmit.edu.au";
 
                 echo ("<p>$domain</p>");
-                
-                $domain_exploded=explode(".",$domain);
-                foreach ($domain_exploded as $word){
+
+                $domain_exploded = explode(".", $domain);
+                foreach ($domain_exploded as $word) {
                     echo ("<p>$word</p>");
                 }
                 ?>
             </div>
             <div class="span4">
-                 <a href='index.php' class='btn btn-primary'>Return to Index</a>
+                <a href='index.php' class='btn btn-primary'>Return to Index</a>
             </div>
         </div>
 

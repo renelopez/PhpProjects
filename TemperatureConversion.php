@@ -20,7 +20,7 @@
                             <td><strong>Celsius</strong></td>
                             <td><strong>Fahrenheit</strong></td>
                         </tr>
-                        <?php printConversionCtoF()?>       
+                        <?php printConversionCtoF() ?>       
                     </tbody>
                 </table>
             </div>

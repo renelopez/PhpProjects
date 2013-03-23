@@ -14,7 +14,7 @@
         <h2>Regular Expressions</h2>
         <div class ="row">
             <div class ="span6">
-                <form class="well" action="<?php echo("$_SERVER[PHP_SELF]")?>" method="post">
+                <form class="well" action="<?php echo("$_SERVER[PHP_SELF]") ?>" method="post">
                     <fieldset>
                         <label>Type your RFC to be validated</label>
                         <input type="text" name="RFC" max="13" placeholder="RFC goes here...." />
@@ -25,12 +25,10 @@
                     <?php
                     if (isset($_POST["RFC"])) {
                         $rfc = $_POST["RFC"];
-                        $isValid=  validateRFC($rfc);
-                        if ($isValid)
-                        {
+                        $isValid = validateRFC($rfc);
+                        if ($isValid) {
                             echo("<p>Your RFC {$rfc} is valid</p>");
-                        }
-                        else{
+                        } else {
                             echo("<p>Your RFC {$rfc} is invalid</p>");
                         }
                     }
