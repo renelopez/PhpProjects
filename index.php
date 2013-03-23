@@ -30,6 +30,9 @@
                         <td>
                             <a href="Cryptogram.php" class="btn btn-primary">Homework 2: Cryptogram</a> 
                         </td>
+                        <td>
+                            
+                        </td>
                     </tr> 
                 </table>
             </div>
