@@ -10,7 +10,7 @@
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h3>Index of PHP projects</h2>
+        <h3>Index of PHP projects</h3>
         <div class="row">
             <div class="span8">
                 <table class="table table-bordered table-hover">
@@ -40,6 +40,5 @@
 
             </div>
         </div>
-
 </body>
 </html>
