@@ -3,7 +3,7 @@
 function openConnection() {
 
 // Create connection
-    $con = mysqli_connect("localhost", "root", "", "winestore");
+    $con = mysqli_connect("localhost", "root", "adminadmin", "winestore");
 
 // Check connection
     if (mysqli_connect_errno($con)) {

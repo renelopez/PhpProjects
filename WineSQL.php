@@ -61,9 +61,35 @@ require("./MySQLConnection.php");
                             echo("<tr>");
                             echo "<td>".$row['winery_name']."</td><td>".$row['region_name']."</td>";
                             echo("</tr>");
-                        }
+                        }                        
                         echo("</table>");
                         break;
+                    case 4:
+                        $query = "SELECT count(v_orders_total_bottles.order_id) as cnt
+                                  FROM  v_orders_total_bottles
+                                  WHERE total_bottles_ordered >10";
+                        echo($query . "<br /><br />");
+                        echo("Results:<br />");
+                        $result = mysqli_query($conn, $query);
+                       $row = mysqli_fetch_assoc($result);
+                        echo $row['cnt'];
+                        break;
+                    case 5:
+                        $query = "SELECT winery.winery_name,region.region_name 
+                                  FROM winery INNER JOIN region ON winery.region_id=region.region_id
+                                  ORDER BY region.region_name AND winery.winery_name";
+                        echo($query . "<br /><br />");
+                        echo("Results:<br />");
+                        $result = mysqli_query($conn, $query);
+                        echo("<table>");
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo("<tr>");
+                            echo "<td>".$row['winery_name']."</td><td>".$row['region_name']."</td>";
+                            echo("</tr>");
+                        }                        
+                        echo("</table>");
+                        break;
+                        
                 }
             }
             ?>
