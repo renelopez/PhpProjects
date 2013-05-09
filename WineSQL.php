@@ -75,21 +75,22 @@ require("./MySQLConnection.php");
                         echo $row['cnt'];
                         break;
                     case 5:
-                        $query = "SELECT winery.winery_name,region.region_name 
-                                  FROM winery INNER JOIN region ON winery.region_id=region.region_id
-                                  ORDER BY region.region_name AND winery.winery_name";
+                        $query = "SELECT wine.wine_id,wine.wine_name,wine_type.wine_type,wine.year,winery.winery_name
+                                  FROM region INNER JOIN winery ON region.region_id = winery.region_id
+                                  INNER JOIN wine ON wine.winery_id = winery.winery_id
+                                  INNER JOIN wine_type ON wine_type.wine_type_id=wine.wine_type
+                                  WHERE region.region_name LIKE 'Riverland'";
                         echo($query . "<br /><br />");
                         echo("Results:<br />");
                         $result = mysqli_query($conn, $query);
                         echo("<table>");
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo("<tr>");
-                            echo "<td>".$row['winery_name']."</td><td>".$row['region_name']."</td>";
+                            echo "<td>".$row['wine_id']."</td><td>".$row['wine_name']."</td><td>".$row['wine_type']."</td><td>".$row['year']."</td><td>".$row['winery_name']."</td>";
                             echo("</tr>");
                         }                        
-                        echo("</table>");
+                        echo("</table>"); 
                         break;
-                        
                 }
             }
             ?>
