@@ -33,6 +33,14 @@
                         <td>
                             
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="WineSQL.php" class="btn btn-primary">Homework 3: Winestore Queries</a> 
+                        </td>
+                        <td>
+                            
+                        </td>
                     </tr> 
                 </table>
             </div>
