@@ -21,7 +21,7 @@
                 </div>
             </div>    
             <div class="{ENDVALIDATION}">
-                <label class="control-label" for="end">Starting temperature °C(0-100)</label>
+                <label class="control-label" for="end">Ending temperature °C(0-100)</label>
                 <div class="controls">
                     <input type="text" id="start" name="end" value="{ENDVALUE}" placeholder="Type the final range" />
                      <input type="hidden" id="endHidden" name="endHidden" value="hiddenValue" />

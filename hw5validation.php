@@ -1,4 +1,5 @@
 <?php
+require_once 'HTML/Template/ITX.php';
 session_start();
 if(isset($_SESSION["start"]) && isset($_SESSION["end"]))
 {
@@ -8,6 +9,7 @@ if(isset($_SESSION["start"]) && isset($_SESSION["end"]))
     validateNumbers($start,$end);
     validateRange($start, $end);
     validateEndingValue($start,$end);
+    renderResults($start,$end);
 }
 
 function validateRequired($start,$end)
@@ -78,4 +80,20 @@ function validateEndingValue($start,$end)
         header('Location: ./hw5.php');
     }
 }
+
+function renderResults($start,$end)
+{
+    $template=new HTML_TEMPLATE_ITX("./templates");
+    $template->loadTemplateFile("hw5results.tpl",true,true);
+    $i=0;
+    for($i=$start;$i<=$end;$i++)
+    {
+        $template->setCurrentBlock("CONVERSION");
+        $template->setVariable("CELSIUS",$i);
+        $template->setVariable("FAHRENHEIT",($i*1.8)+32);
+        $template->parseCurrentBlock();
+    }
+    $template->show();
+}
 ?>
+
