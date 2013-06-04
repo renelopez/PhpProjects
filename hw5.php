@@ -1,6 +1,6 @@
 <?php
 
-require_once 'HTML/Template/ITX.php';
+require_once './IT/ITX.php';
 session_start();
 if(isset($_SESSION["startErrorMessage"])||isset($_SESSION["endErrorMessage"]))
   {

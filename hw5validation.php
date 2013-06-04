@@ -1,14 +1,14 @@
 <?php
-require_once 'HTML/Template/ITX.php';
+require_once './IT/ITX.php';
 session_start();
 if(isset($_SESSION["start"]) && isset($_SESSION["end"]))
 {
     $start=$_SESSION["start"];
     $end=$_SESSION["end"];
-    validateRequired($start, $end);
-    validateNumbers($start,$end);
-    validateRange($start, $end);
-    validateEndingValue($start,$end);
+    if(validateRequired($start, $end)){break;}
+    if(validateNumbers($start,$end)){break;}
+    if(validateRange($start, $end)){break;}
+    if(validateEndingValue($start,$end)){break;}
     renderResults($start,$end);
 }
 
@@ -25,8 +25,14 @@ function validateRequired($start,$end)
         $error++;
     }
     
-    if($error > 0){
+    if($error > 0)
+    {
         header('Location: ./hw5.php');
+        return true;
+    }
+    else
+    {
+        return false;
     }
     
 }
@@ -44,8 +50,14 @@ function validateNumbers($start,$end)
         $error++;
     }
     
-    if($error > 0){
+    if($error > 0)
+    {
         header('Location: ./hw5.php');
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
@@ -62,8 +74,14 @@ function validateRange($start,$end)
         $error++;
     }
     
-    if($error > 0){
+    if($error > 0)
+    {
         header('Location: ./hw5.php');
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
@@ -76,8 +94,14 @@ function validateEndingValue($start,$end)
         $error++;
     }
     
-    if($error > 0){
+    if($error > 0)
+    {
         header('Location: ./hw5.php');
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
